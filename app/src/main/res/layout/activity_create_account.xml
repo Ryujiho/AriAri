@@ -22,23 +22,25 @@
             android:text="회원가입" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/createName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="jiho_Google" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/createEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
+            android:text="goll167@gmail.com"
             android:hint="E-mail Address"/>
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:text="jiho0213"
+            android:id="@+id/createPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
