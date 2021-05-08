@@ -1,4 +1,4 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,11 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONObject;
 
-public class CreateAccountActivity extends AppCompatActivity {
+import hongik.enactus.myapplication.R;
+
+public class RegisterAccountActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account);
+        setContentView(R.layout.activity_register);
 
         EditText CreateName = findViewById(R.id.createName);
         EditText CreateEmail = findViewById(R.id.createEmail);

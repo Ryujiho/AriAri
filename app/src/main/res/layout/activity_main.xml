@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -19,7 +19,6 @@
         android:orientation="horizontal"
         android:layout_weight="3">
         <ImageView
-            android:id="@+id/imageView2"
             android:background="@drawable/kakaostory_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +40,6 @@
         android:layout_weight="3">
 
         <ImageView
-            android:id="@+id/imageView3"
             android:background="@drawable/kakaostory_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,23 +64,21 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Continue"/>
 
         <Button
-            android:id="@+id/findpwBtn"
+            android:id="@+id/btn_find_pwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
             android:text="비밀번호를 잊었어요!" />
 
         <Button
-            android:id="@+id/createAccBtn"
+            android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="108dp"
             android:text="새로 가입할래요!"
             android:textColor="@color/black" />
 
@@ -91,6 +87,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/btn_tmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="임시 버튼입니당"/>
     </LinearLayout>
 
 

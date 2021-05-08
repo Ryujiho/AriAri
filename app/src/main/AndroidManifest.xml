@@ -18,22 +18,22 @@
         android:name="com.kakao.sdk.AppKey"
         android:value="@string/kakao_app_key" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter-->
         </activity>
-        <activity android:name=".CreateAccountActivity"/>
-        <activity android:name=".FragmentActivity"/>
-        <activity android:name=".AlarmActivity"/>
+        <activity android:name=".activity.RegisterAccountActivity"/>
+        <activity android:name=".activity.FragmentActivity"/>
+        <activity android:name=".activity.AlarmActivity"/>
     </application>
 
 </manifest>

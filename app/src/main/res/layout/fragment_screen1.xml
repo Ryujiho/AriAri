@@ -8,41 +8,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
         <Button
             android:id="@+id/tab_closeBtn"
             android:layout_width="wrap_content"
-            android:text="SKIP"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="SKIP"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/main" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <TextView
-            android:id="@+id/tab_mainTxt"
             style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:lineSpacingMultiplier="1.2"
-            android:padding="16dp"
-            android:text="기기와 연동하시겠어요?" />
+            android:text="@string/onboarding1_1" />
         <TextView
-            android:id="@+id/tab_contentTxt"
             style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingMultiplier="1.2"
-            android:padding="16dp"
-            android:text="투약 기계" />
+            android:textAlignment="center"
+            android:text="@string/onboarding1_2"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"

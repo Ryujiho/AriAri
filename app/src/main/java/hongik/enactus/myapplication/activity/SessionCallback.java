@@ -1,22 +1,30 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.activity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.kakao.auth.ApiResponseCallback;
-import com.kakao.auth.AuthService;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.kakao.auth.ISessionCallback;
-import com.kakao.auth.network.response.AccessTokenInfoResponse;
+import com.kakao.auth.Session;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.api.UserApi;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
 import com.kakao.usermgmt.response.model.Profile;
 import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import hongik.enactus.myapplication.activity.AlarmActivity;
+import hongik.enactus.myapplication.common.URI;
+import retrofit2.http.HTTP;
 
 // 카카오톡 로그인 전달값을 전달받기 위한 클래스
 public class SessionCallback implements ISessionCallback {
@@ -56,11 +64,32 @@ public class SessionCallback implements ISessionCallback {
 
                         UserAccount kakaoAccount = result.getKakaoAccount();
                         if (kakaoAccount != null) {
+                            Session session = Session.getCurrentSession();
+
+                            Log.i("JIHO", session.getTokenInfo().toString());
+
+                            JSONObject jObject = null;
+                            try {
+                                jObject = new JSONObject(session.getTokenInfo().toString());
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                            JSONObject jsonValues = new JSONObject();
+                            try {
+                                jsonValues.put("accessToken", jObject.get("access_token"));
+                                NetworkTask networkTask = new NetworkTask(URI.hostName + URI.kakaoLogin, jsonValues);
+                                networkTask.execute();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+
                             Intent intent = new Intent(context, AlarmActivity.class);
                             //REMOVE all previous activities
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
-                            ((Activity)context).finish();
+                            //((Activity)context).finish();
 
                             // 이메일
                             String email = kakaoAccount.getEmail();

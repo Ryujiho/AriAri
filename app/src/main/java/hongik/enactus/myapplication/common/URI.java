@@ -1,4 +1,4 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.common;
 
 public class URI {
     public static final String hostName ="hongikeatme.herokuapp.com";

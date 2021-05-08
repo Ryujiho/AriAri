@@ -1,4 +1,4 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.fragement;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.google.android.material.tabs.TabLayout;
+
+import hongik.enactus.myapplication.R;
 
 public class Fragment2 extends Fragment {
 

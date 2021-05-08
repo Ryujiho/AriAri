@@ -1,13 +1,9 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.activity;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -19,29 +15,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.kakao.auth.AccessTokenCallback;
-import com.kakao.auth.ApiResponseCallback;
-import com.kakao.auth.AuthService;
 import com.kakao.auth.AuthType;
-import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
-import com.kakao.auth.authorization.accesstoken.AccessToken;
-import com.kakao.auth.network.response.AccessTokenInfoResponse;
-import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.LoginButton;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
-import com.kakao.usermgmt.callback.MeV2ResponseCallback;
-import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.usermgmt.response.model.Profile;
-import com.kakao.usermgmt.response.model.UserAccount;
-import com.kakao.util.OptionalBoolean;
-import com.kakao.util.exception.KakaoException;
 
 import org.json.JSONObject;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import hongik.enactus.myapplication.R;
+import hongik.enactus.myapplication.common.URI;
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext;
@@ -54,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         mContext = getApplicationContext();
 
-        Button StartBtn = findViewById(R.id.startBtn);
-        StartBtn.setOnClickListener(new View.OnClickListener() {
+        Button btn_start_splash = findViewById(R.id.btn_start_splash);
+        btn_start_splash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.activity_main);
-                LoginFunc();
+                startMain();
             }
         });
     }
@@ -87,17 +73,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void LoginFunc() {
-        sessionCallback.setContext(mContext);
+    void startMain() {
+        sessionCallback.setContext(mContext);   //카카오 로그인용
 
+        Button btn_tmp = findViewById(R.id.btn_tmp);
+        btn_tmp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+        
         Session session = Session.getCurrentSession();
+        System.out.println(session.getTokenInfo());
         session.addCallback(sessionCallback);
 
         EditText txt_login_email = findViewById(R.id.txt_login_email);
         EditText txt_login_pwd = findViewById(R.id.txt_login_pwd);
 
-        Button LoginBtn = findViewById(R.id.loginBtn);
-        LoginBtn.setOnClickListener(new View.OnClickListener() {
+        Button btn_login = findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -116,21 +112,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        LoginButton KakaoLoginBtn = findViewById(R.id.btn_kakao_login);
-        KakaoLoginBtn.setOnClickListener(new View.OnClickListener() {
+        LoginButton btn_kakao_login = findViewById(R.id.btn_kakao_login);
+        btn_kakao_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 session.open(AuthType.KAKAO_LOGIN_ALL, MainActivity.this);
 
-
             }
         });
 
-        Button CreateAccBtn = findViewById(R.id.createAccBtn);
-        CreateAccBtn.setOnClickListener(new View.OnClickListener() {
+        Button btn_register = findViewById(R.id.btn_register);
+        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(mContext, CreateAccountActivity.class);
+                Intent intent3 = new Intent(mContext, RegisterAccountActivity.class);
                 startActivity(intent3);
                 finish();
             }

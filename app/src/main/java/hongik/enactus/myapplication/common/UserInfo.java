@@ -1,4 +1,4 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.common;
 
 public class UserInfo {
     public static final int LOGIN_SUCCESS = 1, LOGIN_FAIL = 0;

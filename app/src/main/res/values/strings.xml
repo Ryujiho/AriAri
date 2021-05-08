@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="kakao_app_key">c2ca5e18100afa0762eca9521e7ecb04</string>
+    <string name="next">NEXT</string>
+    <string name="onboarding1_1">기기와 연동하시겠어요?</string>
+    <string name="onboarding1_2">투약 기계와 어플리케이션을 연동시킵니다.</string>
+
+    <string name="connecting_step1">1. 기기 하단에 전원어뎁터를 연결하세요.</string>
+    <string name="connecting_step2">2. 내부의 통을 꺼내세요.</string>
+    <string name="connecting_step3">3. 리셋 버튼을 \'삐\' 소리가 날 때까지 눌러주세요.</string>
+
+    <string name="onboarding_checkbox">전면의 원형 디스플레이가 깜박입니다.</string>
+    <string name="onboarding3_2">기기의 WIFI를 연결한 뒤 앱으로 돌아와주세요.</string>
+
+    <string name="step_preparing">준비단계</string>
+    <string name="connect_machine">기기 연결</string>
+    <string name="connect_phone_and_machine">폰과 기기를 연결하기</string>
+    <string name="wifi_ko">wifi 이름</string>
+    <string name="password_ko">비밀번호</string>
+    <string name="connect_wifi">WIFI 설정하기</string>
+    <string name="connecting_wifi">wifi 연결중...</string>
+    <string name="success">성공!</string>
 </resources>

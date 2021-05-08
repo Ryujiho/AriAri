@@ -1,24 +1,22 @@
-package hongik.enactus.myapplication;
+package hongik.enactus.myapplication.activity;
 
-import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Network;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.kakao.usermgmt.response.model.User;
-
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import hongik.enactus.myapplication.activity.FragmentActivity;
+import hongik.enactus.myapplication.common.URI;
+import hongik.enactus.myapplication.common.UserInfo;
 
 public class NetworkTask extends AsyncTask<String, Void, Void> {
     String result;
@@ -127,7 +125,7 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
 
         if (UserInfo.getResult() == UserInfo.LOGIN_SUCCESS) {
             Log.d("LOG", "[LOGIN] MAIN SUCCESS : " );
-            Intent intent = new Intent(mContext, FragmentActivity.class);
+            Intent intent = new Intent(mContext, FragmentActivity.class); //로그인용
             //REMOVE all previous activities
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
