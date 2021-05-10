@@ -1,6 +1,11 @@
-package hongik.enactus.myapplication.fragement;
+package hongik.enactus.myapplication.fragment.onboarding;
 
 
+import android.content.Context;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -8,21 +13,16 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import hongik.enactus.myapplication.fragement.Fragment1;
-import hongik.enactus.myapplication.fragement.Fragment2;
-
 public class PageAdapter extends FragmentStatePagerAdapter {
     private static final int NUM_PAGES = 4;
+
+    // LayoutInflater 서비스 사용을 위한 Context 참조 저장.
+    private Context mContext = null ;
 
     List<Fragment> fragments = new ArrayList<>();
 
     public PageAdapter(FragmentManager fm) {
         super(fm);
-        fragments.add(new Fragment1());
-        fragments.add(new Fragment2());
-        fragments.add(new Fragment3());
-        fragments.add(new Fragment4());
-        fragments.add(new Fragment5());
     }
 
     @Override
@@ -33,5 +33,16 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return fragments.size();
+    }
+
+    // 추가
+    public void addItem(Fragment item){
+        fragments.add(item);
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return "PAGE"+position;
     }
 }

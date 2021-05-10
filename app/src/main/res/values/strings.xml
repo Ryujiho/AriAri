@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_configuration">Configuration</string>
+
     <string name="kakao_app_key">c2ca5e18100afa0762eca9521e7ecb04</string>
     <string name="next">NEXT</string>
     <string name="onboarding1_1">기기와 연동하시겠어요?</string>

@@ -1,14 +1,15 @@
-package hongik.enactus.myapplication.fragement;
+package hongik.enactus.myapplication.fragment.onboarding;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,7 +30,18 @@ public class Fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return (ViewGroup) inflater.inflate(
-                R.layout.fragment_screen2, container, false);
+
+        // layout 의 view 정보 가져오기
+        View view = inflater.inflate(R.layout.fragment_screen2,container,false);
+
+        Button btn_connect_wifi = (Button) view.findViewById(R.id.btn_connect_wifi);
+        btn_connect_wifi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+            }
+        });
+
+        return view;
     }
 }

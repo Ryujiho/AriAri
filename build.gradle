@@ -18,10 +18,9 @@ allprojects {
         jcenter()
         /*카카오*/
         mavenCentral()
-        maven { url 'http://devrepo.kakao.com/nexus/content/groups/public/'}
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
