@@ -1,27 +1,85 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_alarmlist">AlarmList</string>
+    <string name="title_connection">Connection</string>
     <string name="title_configuration">Configuration</string>
 
+
     <string name="kakao_app_key">c2ca5e18100afa0762eca9521e7ecb04</string>
+
+    <!-- 메인 화면 -->
+    <string name="txt_main">안녕하세요! <br/> 저는 매일이입니다.</string>
+    <string name="txt2_main">올바른 투약습관을 지킬 수 있게 <br/>
+        제가 도와드릴게요!</string>
+    <string name="register_btn">회원가입</string>
+    <string name="login_btn">로그인하기</string>
+
+    <!-- 로그인 화면 -->
+    <string name="btn_login">로그인</string>
+    <string name="btn_kakao_login">카카오 로그인</string>
+    <string name="txt_email">이메일</string>
+    <string name="txt_pwd_hint">비밀번호 8자 이상</string>
+    <string name="btn_pwd_find">비밀번호를 잊어버리셨나요?</string>
+    <string name="txt_or">or</string>
+
+    <!-- 로그인 팝업창 오류 -->
+    <string name="alert_login_error_title">로그인 오류</string>
+    <string name="alert_login_error">이메일 혹은 비밀번호가 일치하지 않습니다.<br/>
+        다시 시도해주십시오.</string>
+    <string name="alert_pwd_reset_title">비밀번호 재설정</string>
+    <string name="alert_pwd_reset">가입되어 있는 이메일 주소를<br/>
+        입력해 주세요.<br/>
+        전송된 메일로 인증을 완료하시면<br/>
+        임시 비밀번호가 발급됩니다.</string>
+
+    <!-- 회원가입 -->
+    <string name="register_nickname">닉네임</string>
+    <string name="register_check_pwd">비밀번호 확인</string>
+    <string name="register_policy">By creating an account, you are agreeing to our
+Terms of Service and Privacy Policy</string>
+
+    <!-- 로그인 팝업창 오류 -->
+    <string name="alert_register_error_title">회원가입 오류</string>
+    <string name="alert_register_error_pwd">비밀번호가 일치하지 않습니다. <br/>
+        다시 시도해주세요.</string>
+    <string name="alert_register_error_email">유효하지 않은 이메일 주소입니다. <br/>
+        다시 시도해주세요.</string>
+
+    <!-- 홈 기기연결 팝업창-->
+    <string name="alert_home_start_title">
+        반가워요! <br/>
+        편안한 투약 알림을 위해서 <br/>
+        기기와 연결하시겠어요?</string>
+    <string name="alert_home_start">기기에서 약을 제 때 가져갔는지 <br/>
+        당신의 투약습관을 확인할 수 있어요.</string>
+    <string name="alert_home_ok_btn">네, 연동할래요!</string>
+
+
+    <!-- 온보딩 화면 -->
     <string name="next">NEXT</string>
     <string name="onboarding1_1">기기와 연동하시겠어요?</string>
     <string name="onboarding1_2">투약 기계와 어플리케이션을 연동시킵니다.</string>
 
-    <string name="connecting_step1">1. 기기 하단에 전원어뎁터를 연결하세요.</string>
-    <string name="connecting_step2">2. 내부의 통을 꺼내세요.</string>
-    <string name="connecting_step3">3. 리셋 버튼을 \'삐\' 소리가 날 때까지 눌러주세요.</string>
+    <string name="connecting_step">1. 기기 하단에 전원어뎁터를 연결하세요. <br/>
+        2. 내부의 통을 꺼내세요. <br/>
+        3. 리셋 버튼을 \'삐\' 소리가 날 때까지 눌러주세요.</string>
 
-    <string name="onboarding_checkbox">전면의 원형 디스플레이가 깜박입니다.</string>
-    <string name="onboarding3_2">기기의 WIFI를 연결한 뒤 앱으로 돌아와주세요.</string>
+    <string name="onboarding_check">전면의 원형 디스플레이가 안 깜빡이나요?</string>
+    <string name="onboarding3_2">기기 뒷면 라벨에 적힌 WIFI를 연결한 뒤 <br/>
+        앱으로 돌아와주세요.</string>
 
     <string name="step_preparing">준비단계</string>
     <string name="connect_machine">기기 연결</string>
-    <string name="connect_phone_and_machine">폰과 기기를 연결하기</string>
-    <string name="wifi_ko">wifi 이름</string>
-    <string name="password_ko">비밀번호</string>
-    <string name="connect_wifi">WIFI 설정하기</string>
-    <string name="connecting_wifi">wifi 연결중...</string>
+    <string name="connect_phone_and_machine">폰-기기 연결</string>
+    <string name="success_connection">폰-기기 WIFI 연결</string>
     <string name="success">성공!</string>
+
+    <string name="connect_wifi">기기-공유기 연결</string>
+    <string name="warn_not_5g">5G Wi-Fi 지원하지 않음</string>
+    <string name="connect">연결</string>
+    <string name="wifi_password">WIFI 비밀번호 입력</string>
+
+
+
 </resources>

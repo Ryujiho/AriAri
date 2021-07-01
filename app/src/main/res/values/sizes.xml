@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="font_size_main_title">35dp</dimen>
+    <dimen name="font_size_main_btn">20dp</dimen>
+    <dimen name="font_size_description">17dp</dimen>
+
     <dimen name="font_size_title">40dp</dimen>
     <dimen name="font_size_subtitle">15dp</dimen>
 

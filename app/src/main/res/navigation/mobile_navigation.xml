@@ -7,19 +7,26 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="hongik.enactus.myapplication.fragment.home.HomeFragment"
+        android:name="hongik.enactus.myapplication.fragment.home.CalendarFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_calendar" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="hongik.enactus.myapplication.fragment.home.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_alarmlist"
+        android:name="hongik.enactus.myapplication.fragment.home.AlarmFragment"
+        android:label="@string/title_alarmlist"
+        tools:layout="@layout/fragment_alarmlist" />
+
+    <fragment
+        android:id="@+id/navigation_connection"
+        android:name="hongik.enactus.myapplication.fragment.home.ConnectionFragment"
+        android:label="@string/title_connection"
+        tools:layout="@layout/fragment_connection" />
 
     <fragment
         android:id="@+id/navigation_configuration"
         android:name="hongik.enactus.myapplication.fragment.home.ConfigurationFragment"
         android:label="@string/title_configuration"
         tools:layout="@layout/fragment_configuration" />
+
 </navigation>

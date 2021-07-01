@@ -2,7 +2,8 @@ package hongik.enactus.myapplication.common;
 
 public class URI {
     public static final String hostName ="hongikeatme.herokuapp.com";
-    public static final String register ="/api/users/register";  //Local 유저 가입
+
+    public static final String registerUsers ="/api/users/register";  //Local 유저 가입
     public static final String confirmEmail ="/api/users/confirmEmail"; //이메일 인증
     public static final String login ="/api/users/login";   //로컬 유저 로그인.
     public static final String kakaoLogout ="/api/users/oauth/kakao/logout";

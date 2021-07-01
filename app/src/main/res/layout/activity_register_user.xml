@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_gradient_purple">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="35dp"
+            android:text="@string/register_btn"
+            android:textSize="@dimen/font_size_main_title"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/createName"
+            android:background="@drawable/edittext_background"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:paddingLeft="25dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="jiho_Google"
+            android:textSize="@dimen/font_size_main_btn"
+            android:textColorHint="@color/white"
+            android:hint="@string/register_nickname"/>
+
+        <EditText
+            android:id="@+id/createEmail"
+            android:background="@drawable/edittext_background"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:paddingLeft="25dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="goll167@gmail.com"
+            android:textSize="@dimen/font_size_main_btn"
+            android:textColorHint="@color/white"
+            android:hint="@string/txt_email"/>
+
+        <EditText
+            android:id="@+id/createPassword"
+            android:background="@drawable/edittext_background"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:paddingLeft="25dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text="jiho0213"
+            android:textSize="@dimen/font_size_main_btn"
+            android:textColorHint="@color/white"
+            android:hint="@string/txt_pwd_hint"/>
+
+        <EditText
+            android:id="@+id/create_check_password"
+            android:background="@drawable/edittext_background"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:paddingLeft="25dp"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textSize="@dimen/font_size_main_btn"
+            android:textColorHint="@color/white"
+            android:hint="@string/register_check_pwd"/>
+
+
+        <Button
+            android:id="@+id/createBtn"
+            android:background="@drawable/btn_white_radius"
+            android:layout_width="300dp"
+            android:layout_height="64dp"
+            android:layout_margin="30dp"
+            android:text="@string/register_btn"
+            android:textSize="@dimen/font_size_main_btn"
+            android:textColor="@color/purple_textColor"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="@string/register_policy"
+        android:textSize="@dimen/font_size_description"
+        android:textAlignment="center"/>
+
+</LinearLayout>

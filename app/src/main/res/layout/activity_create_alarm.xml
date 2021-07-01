@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="회원가입" />
+            android:text="알람추가" />
 
         <EditText
             android:id="@+id/createName"
@@ -27,16 +27,16 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="jiho_Google" />
+            android:text="9시" />
 
         <EditText
             android:id="@+id/createEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="E-mail Address"
             android:inputType="textEmailAddress"
-            android:text="goll167@gmail.com"
-            android:hint="E-mail Address"/>
+            android:text="고혈압약" />
 
         <EditText
             android:text="jiho0213"
@@ -52,7 +52,7 @@
             android:id="@+id/createBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="createAccount" />
+            android:text="createAlarm" />
 
     </LinearLayout>
 </LinearLayout>

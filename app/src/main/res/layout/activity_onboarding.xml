@@ -3,66 +3,34 @@
     android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/blue_background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8"
-        android:gravity="right"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="close" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:background="@drawable/btn_purple_radius"
+        android:text="next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_main_btn"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_weight="1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <androidx.viewpager.widget.PagerTitleStrip
-            android:background="@color/purple_700"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-        </androidx.viewpager.widget.PagerTitleStrip>
-
-    </androidx.viewpager.widget.ViewPager>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_previous"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="back" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"/>
-        <Button
-            android:id="@+id/btn_next"
-            android:text="next"
-            android:background="@drawable/button_circle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <!--com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        app:tabGravity="center"
-        app:tabBackground="@drawable/tab_selector"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent">
-    </com.google.android.material.tabs.TabLayout-->
+        android:background="@color/grey_onboarding" />
+
+
 </LinearLayout>

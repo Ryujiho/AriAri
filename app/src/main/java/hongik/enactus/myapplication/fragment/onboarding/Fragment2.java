@@ -1,12 +1,10 @@
 package hongik.enactus.myapplication.fragment.onboarding;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -41,7 +39,10 @@ public class Fragment2 extends Fragment {
                 //
             }
         });
-
+//
+//        ImageView imgView_loading = (ImageView) view.findViewById(R.id.imgView_loading);
+//        Drawable drawable = getResources().getDrawable(R.drawable.onboard_unselected_dot, null);
+//        imgView_loading.setBackground(drawable);*/
         return view;
     }
 }

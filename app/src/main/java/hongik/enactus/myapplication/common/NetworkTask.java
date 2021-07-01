@@ -1,5 +1,6 @@
-package hongik.enactus.myapplication.activity;
+package hongik.enactus.myapplication.common;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,18 +15,18 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import hongik.enactus.myapplication.common.Parameter;
-import hongik.enactus.myapplication.common.Tag;
-import hongik.enactus.myapplication.common.URI;
-import hongik.enactus.myapplication.common.UserInfo;
+import hongik.enactus.myapplication.R;
+import hongik.enactus.myapplication.activity.HomeActivity;
 
 public class NetworkTask extends AsyncTask<String, Void, Void> {
+    private boolean isLogin = false, isRegister = false;
+
     String result;
     private String url;
     private JSONObject parameters;
     private Context mContext;
 
-    NetworkTask(String url, JSONObject params){
+    public NetworkTask(String url, JSONObject params){
         this.url = url;
         this.parameters = params;
     }
@@ -36,11 +37,10 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
 
     @Override
     protected Void doInBackground(String ...params) {
-        try {
-            boolean isLogin = false, isRegister = false;
 
+        try {
             if(url.contains(URI.login) | url.contains(URI.kakaoLogin)) isLogin = true;
-            else if(url.contains(URI.register)) isRegister = true;
+            else if(url.contains(URI.registerUsers)) isRegister = true;
 
             if(!url.contains("http") || !url.contains("https")){
                 url = "https://"+url;
@@ -73,6 +73,7 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
             if(conn.getResponseCode() != HttpURLConnection.HTTP_OK){
                 Log.d(Tag.NETWORK, "getResponseFail");
                 if(isLogin) UserInfo.setResult(0);
+                if(isRegister) UserInfo.setRegisterResult(0);
                 return null;
             }
 
@@ -93,17 +94,31 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
             // Set UserInfo data
             if(isLogin){
                 JSONObject jObject = new JSONObject(result);
-                Boolean loginSuccess = jObject.getBoolean(Parameter.TOKEN); //loginSucces
-                String userId = jObject.getString(Parameter.USER_ID);
-                String token = jObject.getString(Parameter.TOKEN);
-                String name = jObject.getString(Parameter.NAME);
+                Boolean loginSuccess = jObject.getBoolean(Parameter.LOGIN_SUCCESS); //loginSucces
                 if(loginSuccess){
+                    String userId = jObject.getString(Parameter.USER_ID);
+                    String token = jObject.getString(Parameter.TOKEN);
+                    String name = jObject.getString(Parameter.NAME);
                     UserInfo.setResult(1);
                     UserInfo.setName(name);
                     UserInfo.setToken(token);
                     UserInfo.setUserId(userId);
+                } else {
+                    String message = jObject.getString(Parameter.MESSAGE);
+                    Log.e(Tag.TEST, message);
+                    UserInfo.setResult(0);
+                }
+
+            } else if(isRegister){
+                JSONObject jObject = new JSONObject(result);
+                Boolean result = jObject.getBoolean(Parameter.SUCCESS);
+                if(result){
+                    UserInfo.setRegisterResult(1);
+                } else {
+                    UserInfo.setRegisterResult(0);
                 }
             }
+
             conn.disconnect();
 
         } catch (Exception e){
@@ -117,13 +132,33 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
         super.onPostExecute(aVoid);
         Log.d(Tag.NETWORK, "HTTP Request Result : "+result);
 
-        if (UserInfo.getResult() == UserInfo.LOGIN_SUCCESS) {
+        int loginResult = UserInfo.getResult();
+        int registerResult = UserInfo.getRegisterResult();
+
+        if (isLogin && loginResult == UserInfo.LOGIN_SUCCESS) {
             Log.d(Tag.NETWORK, " LOGIN SUCCESS " );
-            Intent intent = new Intent(mContext, onBoardingActivity.class); //로그인용
+            Intent intent = new Intent(mContext, HomeActivity.class); //로그인용
             //REMOVE all previous activities
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
+
+        } else if(isLogin && loginResult == UserInfo.LOGIN_FAIL){
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.ErrorDialogTheme);
+            builder.setMessage(R.string.alert_login_error)
+                    .setTitle(R.string.alert_login_error_title)
+                    .setPositiveButton("확인", null)
+                    .setCancelable(false);
+            AlertDialog alert = builder.show();
+
+        } if(isRegister && registerResult == UserInfo.REGISTER_FAIL){
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.ErrorDialogTheme);
+                builder.setMessage(R.string.alert_register_error_email)
+                        .setTitle(R.string.alert_register_error_title)
+                        .setPositiveButton("확인", null)
+                        .setCancelable(false);
+                AlertDialog alert = builder.show();
         }
+
 
     }
 }

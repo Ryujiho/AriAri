@@ -6,10 +6,21 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
+
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_alarmlist"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_alarmlist" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_connection"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_connection" />
+
 
     <item
         android:id="@+id/navigation_configuration"

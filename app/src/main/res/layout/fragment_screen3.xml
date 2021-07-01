@@ -1,42 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- fragment_screen_slide_page.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_margin="15dp"
+            android:textSize="@dimen/font_size_main_title"
+            android:textColor="@color/purple_textColor"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/connect_wifi"/>
+
+    <EditText
+        android:id="@+id/txt_login_pwd"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:paddingLeft="25dp"
+        android:background="@drawable/edittext_background"
+        android:text="jiho0213"
+        android:textColorHint="@color/white"
+        android:hint="@string/txt_pwd_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true" />
+
+
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:orientation="vertical">
+        android:layout_margin="15dp">
+
+        <Button
+            android:id="@+id/k"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_circle"
+            android:text="\!" />
 
         <TextView
-            style="?android:textAppearanceMedium"
+            android:id="@+id/checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="@dimen/font_size_title"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/connect_phone_and_machine" />
-
-        <TextView
-            style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/connecting_wifi" />
-
-        <ImageView
-            android:id="@+id/imgView_loading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/main" />
+            android:text="@string/warn_not_5g"
+            android:textSize="@dimen/font_size_description"
+            android:textColor="@color/red" />
 
     </LinearLayout>
 

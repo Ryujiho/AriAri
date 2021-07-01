@@ -16,19 +16,10 @@ import hongik.enactus.myapplication.R;
 
 public class ConfigurationFragment extends Fragment {
 
-    private ConfigurationViewModel configurationViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        configurationViewModel = new ViewModelProvider(this).get(ConfigurationViewModel.class);
         View root = inflater.inflate(R.layout.fragment_configuration, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        configurationViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 }

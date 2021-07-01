@@ -1,80 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- fragment_screen_slide_page.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <LinearLayout
+    <TextView
+        style="?android:textAppearanceMedium"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_main_title"
+        android:textColor="@color/purple_textColor"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/step_preparing" />
 
-        <TextView
-            style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="@dimen/font_size_title"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/step_preparing" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_description"
+        android:textColor="@color/black"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/connecting_step" />
 
-        <TextView
-            style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/connecting_step1" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="196dp"
+        android:background="@color/black" />
 
-        <TextView
-            style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/connecting_step2" />
-        <TextView
-            style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/connecting_step3" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/main" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/onboarding_checkbox" />
+        android:layout_margin="15dp">
 
         <Button
             android:id="@+id/k"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/button_circle"
             android:text="\?" />
+        <TextView
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/onboarding_check"
+            android:textSize="@dimen/font_size_description"
+            android:textColor="@color/grey_textColor" />
+
     </LinearLayout>
+
 
 </LinearLayout>

@@ -1,20 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_gradient_purple">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_main"
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_main_title"
+        android:layout_margin="20dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt2_main"
+        android:textAlignment="center"
+        android:textSize="@dimen/font_size_description"
+        android:layout_margin="30dp" />
+
 
 
     <Button
-        android:id="@+id/btn_start_splash"
-        android:layout_width="339dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="196dp"
-        android:text="Get Start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/btn_register_main"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:layout_margin="10dp"
+        android:text="@string/register_btn"
+        android:textSize="@dimen/font_size_main_btn"
+        android:textColor="@color/purple_textColor"
+        android:background="@drawable/btn_white_radius"/>
+
+    <Button
+        android:id="@+id/btn_login_main"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:layout_margin="10dp"
+        android:text="@string/login_btn"
+        android:textSize="@dimen/font_size_main_btn"
+        android:textColor="@color/purple_textColor"
+        android:background="@drawable/btn_white_radius" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_onboarding_tmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="임시 버튼_온보딩"/>
+
+    <Button
+        android:id="@+id/btn_home_tmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="임시 버튼_메인화면"/>
+</LinearLayout>
