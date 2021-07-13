@@ -14,6 +14,7 @@
         android:layout_margin="15dp"
         android:textAlignment="center"
         android:textSize="@dimen/font_size_main_title"
+        android:textStyle="bold"
         android:textColor="@color/purple_textColor"
         android:lineSpacingMultiplier="1.2"
         android:text="@string/step_preparing" />
@@ -59,5 +60,13 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:background="@drawable/btn_purple_radius"
+        android:text="next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_main_btn"/>
 
 </LinearLayout>

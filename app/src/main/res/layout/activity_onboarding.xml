@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -8,29 +9,26 @@
 
     <Button
         android:id="@+id/btn_previous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="BACK" />
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="300dp"
-        android:layout_height="64dp"
-        android:background="@drawable/btn_purple_radius"
-        android:text="next"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_size_main_btn"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"/>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/grey_onboarding" />
+
+
 
 
 </LinearLayout>

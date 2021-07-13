@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/grey_onboarding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/alarm_period"
+            android:textColor="@color/blue_textColor"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/font_size_home_pill"/>
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.Design.Light"/>
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_margin="20dp"
+            android:layout_width="300dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_purple_radius"
+            android:text="next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_main_btn"/>
+
+</LinearLayout>

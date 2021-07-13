@@ -21,10 +21,10 @@ public class AlarmFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_alarmlist, container, false);
+        View root = inflater.inflate(R.layout.fragment_home_alarmlist, container, false);
 
         TextView text_alarmlist = root.findViewById(R.id.text_alarmlist);
-        text_alarmlist.setText("배급 예약22");
+        text_alarmlist.setText("배급 예약");
 
         // 리사이클러뷰
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_alarmList);
@@ -32,7 +32,7 @@ public class AlarmFragment extends Fragment {
 
         ArrayList<RecyclerItem> mList = new ArrayList<RecyclerItem>();
 
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<10; i++) {
             RecyclerItem item = new RecyclerItem();
             item.setAlarmTime("Time "+i);
             item.setPillName("Pill "+i);

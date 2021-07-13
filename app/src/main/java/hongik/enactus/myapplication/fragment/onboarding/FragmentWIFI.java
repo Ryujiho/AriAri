@@ -62,7 +62,7 @@ public class FragmentWIFI extends Fragment implements AutoPermissionsListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_onboarding_wifi,container,false);
+        View view = inflater.inflate(R.layout.fragment_onboarding_step3_wifi,container,false);
 
         btn_wifi_scan = view.findViewById(R.id.btn_wifi_scan);
         spinner = view.findViewById(R.id.spinner_wifi_list);

@@ -26,4 +26,9 @@
         <item name="android:padding">5dp</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="timePickerPurple" parent="Widget.MaterialComponents.TimePicker">
+        <item name="android:textColorPrimary">@color/purple_textColor</item>
+        <item name="android:textColor">@color/purple_textColor</item>
+    </style>
 </resources>

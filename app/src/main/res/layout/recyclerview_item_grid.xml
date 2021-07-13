@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
+    android:layout_width="145dp"
+    android:layout_height="160dp"
     android:background="@drawable/grid_alarm_list_background"
-    android:gravity="center"
     android:orientation="vertical"
-    android:layout_margin="5dp">
+    android:elevation="5dp"
+    android:padding="15dp"
+    android:layout_margin="6dp">
 
     <LinearLayout
         android:layout_weight="1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
         <TextView
             android:id="@+id/txt_alarm_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:textSize="@dimen/font_size_home_pill"
+            android:textColor="@color/green_textColor"
             android:text="09:00"/>
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/btn_delete_alarm"
+            android:layout_marginStart="5dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/txt_pill_name"
-        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="@dimen/font_size_home_pill"
+        android:textColor="@color/purple_textColor"
         android:text="고혈압약" />
 
     <TextView
-        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="@dimen/font_size_description"
+        android:textColor="@color/grey_textColor"
         android:text="June 17" />
 
     <TextView
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="@dimen/font_size_description"
+        android:textColor="@color/grey_textColor"
         android:text="7일 동안 배급" />
 
 

@@ -9,24 +9,24 @@
         android:id="@+id/navigation_home"
         android:name="hongik.enactus.myapplication.fragment.home.CalendarFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_calendar" />
+        tools:layout="@layout/fragment_home_calendar" />
 
     <fragment
         android:id="@+id/navigation_alarmlist"
         android:name="hongik.enactus.myapplication.fragment.home.AlarmFragment"
         android:label="@string/title_alarmlist"
-        tools:layout="@layout/fragment_alarmlist" />
+        tools:layout="@layout/fragment_home_alarmlist" />
 
     <fragment
         android:id="@+id/navigation_connection"
         android:name="hongik.enactus.myapplication.fragment.home.ConnectionFragment"
         android:label="@string/title_connection"
-        tools:layout="@layout/fragment_connection" />
+        tools:layout="@layout/fragment_home_machine" />
 
     <fragment
         android:id="@+id/navigation_configuration"
         android:name="hongik.enactus.myapplication.fragment.home.ConfigurationFragment"
         android:label="@string/title_configuration"
-        tools:layout="@layout/fragment_configuration" />
+        tools:layout="@layout/fragment_home_configuration" />
 
 </navigation>

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,11 +35,13 @@ public class CalendarFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_calendar, container, false);
+        View root = inflater.inflate(R.layout.fragment_home_calendar, container, false);
+/*
 
         // 1. 이미지 뷰
         ImageView imgView = root.findViewById(R.id.testImgview);
         imgView.setImageResource(R.drawable.main);
+*/
 
         // 2. 알람 리스트 리사이클러뷰
         // 리사이클러뷰에 표시할 데이터 리스트 생성.

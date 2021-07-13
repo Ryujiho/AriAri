@@ -30,7 +30,7 @@ public class Fragment2 extends Fragment {
                              Bundle savedInstanceState) {
 
         // layout 의 view 정보 가져오기
-        View view = inflater.inflate(R.layout.fragment_screen2,container,false);
+        View view = inflater.inflate(R.layout.fragment_onboarding_step2_machine,container,false);
 
         Button btn_connect_wifi = (Button) view.findViewById(R.id.btn_connect_wifi);
         btn_connect_wifi.setOnClickListener(new View.OnClickListener() {

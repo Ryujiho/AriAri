@@ -1,58 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_gradient_purple"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:orientation="vertical" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="알람추가" />
+            android:layout_weight="1"
+            android:layout_margin="30dp"
+            android:text="배급 예약"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_home_pill" />
 
-        <EditText
-            android:id="@+id/createName"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/close"
+            android:layout_margin="15dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="9시" />
-
-        <EditText
-            android:id="@+id/createEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="E-mail Address"
-            android:inputType="textEmailAddress"
-            android:text="고혈압약" />
-
-        <EditText
-            android:text="jiho0213"
-            android:id="@+id/createPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Password"/>
-
-
-        <Button
-            android:id="@+id/createBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="createAlarm" />
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout_alarm"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager_alarm"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_onboarding" />
+
+
 </LinearLayout>

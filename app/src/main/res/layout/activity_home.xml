@@ -42,8 +42,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/green_textColor"
+        android:tooltipText="@string/home_fab_tooltip"
         app:layout_anchor="@+id/bottomAppBar"
-        app:layout_anchorGravity="top|center" />
+        app:layout_anchorGravity="top|center"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

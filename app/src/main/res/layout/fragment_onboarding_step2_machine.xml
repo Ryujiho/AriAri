@@ -15,6 +15,7 @@
             android:layout_margin="15dp"
             android:textSize="@dimen/font_size_main_title"
             android:textColor="@color/purple_textColor"
+            android:textStyle="bold"
             android:lineSpacingMultiplier="1.2"
             android:text="@string/connect_phone_and_machine" />
 
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="@dimen/font_size_description"
+            android:textColor="@color/black"
             android:layout_margin="15dp"
             android:lineSpacingMultiplier="1.2"
             android:text="@string/onboarding3_2" />

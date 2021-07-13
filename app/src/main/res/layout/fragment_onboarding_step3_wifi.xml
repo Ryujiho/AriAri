@@ -12,6 +12,7 @@
         android:layout_marginBottom="70dp"
         android:textSize="@dimen/font_size_main_title"
         android:textColor="@color/purple_textColor"
+        android:textStyle="bold"
         android:lineSpacingMultiplier="1.2"
         android:text="@string/connect_wifi"/>
 
@@ -40,6 +41,7 @@
         android:paddingLeft="25dp"
         android:background="@drawable/edittext_onboarding_background"
         android:textColorHint="@color/grey_textColor"
+        android:textColor="@color/black"
         android:textSize="@dimen/font_size_main_btn"
         android:hint="@string/wifi_password"
         android:imeOptions="actionDone"
@@ -71,5 +73,14 @@
             android:textColor="@color/red" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:background="@drawable/btn_purple_radius"
+        android:text="next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_main_btn"/>
 
 </LinearLayout>

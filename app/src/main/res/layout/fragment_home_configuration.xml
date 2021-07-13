@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:layout_margin="15dp"
+    tools:context=".fragment.home.ConfigurationFragment"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="180dp"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:elevation="5dp"
+            android:background="@drawable/btn_grey_radius">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/font_size_main_btn"
+                        android:textColor="@color/purple_textColor"
+                        android:text="@string/conf_service_center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_size_main_btn"
+                        android:textColor="@color/purple_textColor"
+                        android:text="@string/conf_ariari_number" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_purple_radius"
+                    android:text="@string/conf_edit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_main_btn"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:src="@drawable/btn_purple_radius" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_grey_radius"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@android:drawable/btn_star_big_off" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_alarm" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:gravity="end"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_push" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_grey_radius"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/btn_star_big_off" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_eval" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:gravity="end"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_do_you_like_it" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_grey_radius"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/btn_star_big_off" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_help" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:gravity="end"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_q_a" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_grey_radius"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/btn_star_big_off" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_service_center" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:gravity="end"
+                android:textSize="@dimen/font_size_main_btn"
+                android:textColor="@color/purple_textColor"
+                android:text="@string/conf_ariari_number" />
+        </LinearLayout>
+
+
+</LinearLayout>

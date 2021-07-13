@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/grey_onboarding">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/set_alarm_name"
+            android:textColor="@color/blue_textColor"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/font_size_home_pill"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/set_alarm_name_desc"
+            android:textColor="@color/purple_background_start"
+            android:textAlignment="center"
+            android:textSize="@dimen/font_size_description"/>
+
+        <EditText
+            android:id="@+id/edittxt_alarm_name"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_margin="30dp"
+            android:paddingLeft="25dp"
+            android:background="@drawable/edittext_onboarding_background"
+            android:textColorHint="@color/grey_textColor"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_main_btn"
+            android:hint="@string/alarm_name"
+            android:imeOptions="actionDone"
+            android:selectAllOnFocus="true" />
+
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_margin="100dp"
+            android:layout_width="300dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_purple_radius"
+            android:text="next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_main_btn"/>
+
+</LinearLayout>
