@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        openAlertDialog();
+        //openAlertDialog();
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);

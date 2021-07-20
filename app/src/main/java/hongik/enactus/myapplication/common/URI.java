@@ -10,4 +10,8 @@ public class URI {
     public static final String kakaoLogin ="/api/users/oauth/kakao/login";
     public static final String info ="/api/users/info"; //유저 정보.
     public static final String tags ="/api/users/tags"; //유저 태그 설정.
+
+    // 공공데이터 활용
+    public static final String getDrugInfoService ="http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList";
+    public static final String getDrugInfoService_key = "/aTAozSuBe7v6MPbUPh113p53kNS3TG7nUQQFwRsDRIInT8Vdsjvq4I0oAgD/ZgoJDXeXclHGnOBrWumVvS4Kg==";
 }

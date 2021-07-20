@@ -40,6 +40,20 @@
             android:selectAllOnFocus="true" />
 
 
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_margin="30dp"
+            android:paddingLeft="25dp"
+            android:background="@drawable/edittext_onboarding_background"
+            android:textColorHint="@color/grey_textColor"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_main_btn"
+            android:hint="자동입력"
+            android:completionHint="검색어를 선택하세요."
+            android:completionThreshold="1"
+            android:imeOptions="actionDone" />
 
         <Button
             android:id="@+id/btn_next"

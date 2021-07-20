@@ -42,6 +42,7 @@ public class RegisterUserActivity extends AppCompatActivity {
 
                         NetworkTask networkTask = new NetworkTask(URI.hostName + URI.registerUsers, jsonValues);
                         networkTask.setContext(RegisterUserActivity.this);
+                        networkTask.setRequestType("POST");
                         networkTask.execute();
 
                     } catch (Exception e) {

@@ -141,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     NetworkTask networkTask = new NetworkTask(URI.hostName + URI.login, jsonValues);
                     networkTask.setContext(LoginActivity.this);
+                    networkTask.setRequestType("POST");
                     networkTask.execute();
 
                 } catch (Exception e){
@@ -179,6 +180,7 @@ public class LoginActivity extends AppCompatActivity {
                     jsonValues.put(Parameter.ACCESS_TOKEN, accessToken);
                     NetworkTask networkTask = new NetworkTask(URI.hostName + URI.kakaoLogin, jsonValues);
                     networkTask.setContext(mContext);
+                    networkTask.setRequestType("POST");
                     networkTask.execute();
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -14,19 +15,22 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import hongik.enactus.myapplication.R;
 import hongik.enactus.myapplication.activity.HomeActivity;
 
 public class NetworkTask extends AsyncTask<String, Void, Void> {
-    private boolean isLogin = false, isRegister = false;
+    private boolean isLogin = false, isRegister = false, isGetDrugInfo = false;
 
     String result;
-    private String url;
+    private String url, mType;
     private JSONObject parameters;
     private Context mContext;
 
     public NetworkTask(String url, JSONObject params){
+        super();
         this.url = url;
         this.parameters = params;
     }
@@ -35,14 +39,19 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
         this.mContext = context;
     }
 
+    public void setRequestType(String type) {
+        this.mType = type;
+    }
+
     @Override
     protected Void doInBackground(String ...params) {
 
         try {
             if(url.contains(URI.login) | url.contains(URI.kakaoLogin)) isLogin = true;
             else if(url.contains(URI.registerUsers)) isRegister = true;
+            else if(url.contains(URI.getDrugInfoService)) isGetDrugInfo = true;
 
-            if(!url.contains("http") || !url.contains("https")){
+            if(!url.contains("http") && !url.contains("https")){
                 url = "https://"+url;
             }
 
@@ -56,17 +65,20 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
             if(conn != null){
                 conn.setReadTimeout(10000); // 10초 동안 기다린 후 응답 없을 시 종료
                 conn.setConnectTimeout(15000);
-                conn.setRequestMethod("POST");
-                conn.setDoInput(true);
-                conn.setDoOutput(true);
+                conn.setRequestMethod(mType);
+                if(mType.equals("POST")){
+                    conn.setDoOutput(true);
+                    conn.setDoInput(true);
+                }
                 conn.setRequestProperty("Content-type", "application/json");
                 conn.setRequestProperty("Accept", "application/json");
 
-                // Request Body에 Data를 담기 위해 OutputStream 객체를 생성
-                OutputStream os = null;
-                os = conn.getOutputStream();
-                os.write(parameters.toString().getBytes("utf-8"));
-                os.flush(); os.close();
+                if(parameters.length() != 0){
+                    // Request Body에 Data를 담기 위해 OutputStream 객체를 생성
+                    OutputStream os = conn.getOutputStream();
+                    os.write(parameters.toString().getBytes("utf-8"));
+                    os.flush(); os.close();
+                }
             }
 
             // 실제 서버로 Request 요청하는 부분 (응답코드를 받는다. 200: 성공)
@@ -130,7 +142,7 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        Log.d(Tag.NETWORK, "HTTP Request Result : "+result);
+        Log.d(Tag.NETWORK, "HTTP 응답 결과 : "+result);
 
         int loginResult = UserInfo.getResult();
         int registerResult = UserInfo.getRegisterResult();
@@ -150,13 +162,34 @@ public class NetworkTask extends AsyncTask<String, Void, Void> {
                     .setCancelable(false);
             AlertDialog alert = builder.show();
 
-        } if(isRegister && registerResult == UserInfo.REGISTER_FAIL){
+        }
+
+        if(isRegister && registerResult == UserInfo.REGISTER_FAIL){
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.ErrorDialogTheme);
                 builder.setMessage(R.string.alert_register_error_email)
                         .setTitle(R.string.alert_register_error_title)
                         .setPositiveButton("확인", null)
                         .setCancelable(false);
                 AlertDialog alert = builder.show();
+        }
+        if(isGetDrugInfo){
+            List<String> drug_list = new ArrayList<>();
+
+            try {
+                JSONObject jObject = new JSONObject(result);
+                JSONObject body = jObject.getJSONObject(Parameter.BODY);
+                JSONArray items = body.getJSONArray(Parameter.ITEMS);
+                for(int i=0;i<items.length();i++){
+                    JSONObject item = (JSONObject) items.get(i);
+                    String itemName = item.getString(Parameter.ITEM_NAME);
+                    drug_list.add(itemName);
+                }
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+            DrugInfo.setList(drug_list);
+
+            Log.e(Tag.TEST, drug_list.toString());
         }
 
 

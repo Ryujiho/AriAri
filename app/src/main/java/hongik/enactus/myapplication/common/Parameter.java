@@ -24,4 +24,10 @@ public class Parameter {
     // 기기 와이파이 연결
     public static final String SSID ="SSID";
 
+
+    // 의약품 정보 - 공공데이터 API
+    public static final String BODY ="body";
+    public static final String ITEMS ="items";
+    public static final String ITEM_NAME ="itemName";
+
 }

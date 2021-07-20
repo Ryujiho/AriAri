@@ -12,8 +12,13 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
+
+import java.net.URLEncoder;
 
 import hongik.enactus.myapplication.R;
+import hongik.enactus.myapplication.common.NetworkTask;
+import hongik.enactus.myapplication.common.URI;
 import hongik.enactus.myapplication.fragment.alarm.FragmentName;
 import hongik.enactus.myapplication.fragment.alarm.FragmentPeriod;
 import hongik.enactus.myapplication.fragment.alarm.FragmentTime;
@@ -30,9 +35,22 @@ public class CreateAlarmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_alarm);
 
-            viewPager = (ViewPager2) findViewById(R.id.viewPager_alarm);
+            viewPager = findViewById(R.id.viewPager_alarm);
             btn_previous= findViewById(R.id.btn_previous);
 
+            try {
+                StringBuilder urlBuilder = new StringBuilder(URI.getDrugInfoService);
+                urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + URLEncoder.encode(URI.getDrugInfoService_key, "UTF-8")); //*Service Key*//*
+                urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("100", "UTF-8")); //*한 페이지 결과 수*//*
+                urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); //*페이지 번호*//*
+                urlBuilder.append("&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); //*페이지 번호*//*
+                NetworkTask networkTask = new NetworkTask(urlBuilder.toString(), new JSONObject());
+                networkTask.setRequestType("GET");
+                networkTask.execute();
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
 
             // ViewPager 와 adapter 연결
             PageAdapter pageAdapter = new PageAdapter(this);
@@ -42,7 +60,7 @@ public class CreateAlarmActivity extends AppCompatActivity {
             viewPager.setAdapter(pageAdapter);
 
             // 현재 페이지 번호 표시
-            tabLayout = (TabLayout) findViewById(R.id.tabLayout_alarm);
+            tabLayout = findViewById(R.id.tabLayout_alarm);
 
             new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
                 @Override
@@ -50,6 +68,7 @@ public class CreateAlarmActivity extends AppCompatActivity {
 
                 }
             }).attach();
+
 
     }
 }
