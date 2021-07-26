@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164969958584",
+    "project_id": "androidpushtest-bba4f",
+    "storage_bucket": "androidpushtest-bba4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164969958584:android:e97397beaf6bb93327f84d",
+        "android_client_info": {
+          "package_name": "hongik.enactus.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164969958584-k2rdgnbsscd3fcu0g6r56fqo59r0g2oi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsCugP2McrMtI1fsZYluI0ct38NjHLXas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164969958584-k2rdgnbsscd3fcu0g6r56fqo59r0g2oi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
